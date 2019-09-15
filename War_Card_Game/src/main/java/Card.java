@@ -1,3 +1,5 @@
+package main.java;
+
 public class Card {
     private int cardNumber;
     private static String[] suit = {"Diamonds", "Hearts", "Spades", "Clubs"};

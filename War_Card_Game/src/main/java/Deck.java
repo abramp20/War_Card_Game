@@ -1,0 +1,37 @@
+package main.java;
+
+public class Deck {
+    private Card[] deck = new Card[52];
+    private int topCard;
+
+    Deck() {
+        topCard = 0;
+
+        for (int i = 0; i < deck.length; i++) {
+            deck[i] = new Card(i);
+        }
+    }
+
+        public void shuffle() {
+            topCard = 0;
+
+            for (int i = 0; i < 1000; i++) {
+                int j = (int)(Math.random()*52);
+                int k = (int)(Math.random()*52);
+                Card tempCard = deck[j];
+                deck[j] = deck[k];
+                deck[k] = tempCard;
+            }
+        }
+
+        public Card deal(){
+        Card card;
+        if(topCard < deck.length){
+            card = deck[topCard];
+            topCard++;
+        }
+        else card = null;
+
+        return card;
+    }
+}
